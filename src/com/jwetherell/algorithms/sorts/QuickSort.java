@@ -36,7 +36,7 @@ public class QuickSort<T extends Comparable<T>> {
         if (pivotType == PIVOT_TYPE.MIDDLE) {
             pivot = unsorted.length/2;
         } else if (pivotType == PIVOT_TYPE.RANDOM) {
-            pivot = getRandom(unsorted.length);  
+            pivot = getRandom(unsorted.length);  // get rid of +1
         }
         sort(pivot, 0, unsorted.length - 1, unsorted);
         return unsorted;
@@ -48,7 +48,7 @@ public class QuickSort<T extends Comparable<T>> {
         int s = start;
         int f = finish;
         while (s <= f) {
-            while (unsorted[s].compareTo(pivot) < 0)
+            while (unsorted[s].compareTo(pivot) < 0) // change to <0, remove equals sign
                 s++;
             while (unsorted[f].compareTo(pivot) > 0)
                 f--;

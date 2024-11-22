@@ -29,7 +29,7 @@ public class BubbleSort<T extends Comparable<T>> {
         while (swapped) {
             swapped = false;
             for (int i = 1; i < length; i++) {
-                if (unsorted[i].compareTo(unsorted[i - 1]) < 0) {
+                if (unsorted[i].compareTo(unsorted[i - 1]) < 0) { // change > to < to sort in ascending order
                     swap(i, i - 1, unsorted);
                     swapped = true;
                 }
